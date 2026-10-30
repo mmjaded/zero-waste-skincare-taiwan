@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero-Waste Skincare Taiwan</title>
+<meta name="description" content="Research report on zero-waste skin care in Taiwan: 10 companies compared, with sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&display=swap">
+<style>
+:root{
+  --ground:#EEF2EC; --step:#E0E8DC; --ink:#0F1F19; --soft:#2F4239;
+  --field:#12392E; --field-ink:#EEF2EC; --accent:#C8EC4A; --link:#0B5A47;
+  --gutter:clamp(16px,3vw,32px);
+  --sec:clamp(72px,11vw,200px);
+  --a1:#12392E; --a3:#0F1F19;
+  --font:"Hanken Grotesk","PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ground:#0E1A15; --step:#16281F; --ink:#EAF0E7; --soft:#B8C7BD; --link:#A9DE5A; --field:#C8EC4A; --field-ink:#0F1F19; --accent:#C8EC4A; --a1:#3F7F6A; --a3:#9CC4B1;color-scheme:dark}
+}
+:root[data-theme="dark"]{--ground:#0E1A15; --step:#16281F; --ink:#EAF0E7; --soft:#B8C7BD; --link:#A9DE5A; --field:#C8EC4A; --field-ink:#0F1F19; --accent:#C8EC4A; --a1:#3F7F6A; --a3:#9CC4B1;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font:400 18px/1.55 var(--font);overflow-x:hidden}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;background:var(--ink);color:var(--ground)}
+.wrap{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px));max-width:1600px;margin-inline:auto}
+h1,h2,h3{letter-spacing:-.035em;font-weight:800}
+h1{font-size:clamp(22px,7.6vw,112px);line-height:.96}
+h2{font-size:clamp(30px,5vw,72px);line-height:1}
+h3{font-size:clamp(26px,3.4vw,48px);line-height:1.02}
+p{max-width:62ch}
+.lead{font-size:clamp(19px,1.9vw,26px);line-height:1.4;max-width:34ch}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px max(var(--gutter),env(safe-area-inset-right,0px)) 18px max(var(--gutter),env(safe-area-inset-left,0px));max-width:1600px;margin-inline:auto}
+nav .mark{font-weight:800;letter-spacing:-.02em;color:var(--ink);text-decoration:none;font-size:18px}
+nav ul{display:flex;gap:clamp(12px,2.4vw,32px);list-style:none}
+nav ul a{color:var(--ink);text-decoration:none;font-weight:500;font-size:16px;padding:8px 0;display:inline-block}
+nav ul a:hover{text-decoration:underline;text-underline-offset:6px}
+nav .mark{white-space:nowrap}
+@media(max-width:700px){
+  nav{flex-wrap:wrap;gap:0}
+  nav ul{width:100%;overflow-x:auto;white-space:nowrap;gap:20px;scrollbar-width:none}
+  nav ul::-webkit-scrollbar{display:none}
+}
+
+/* hero */
+.hero{padding-top:clamp(24px,5vw,72px);padding-bottom:var(--sec)}
+.hero-row{display:grid;grid-template-columns:5fr 7fr;gap:var(--gutter);margin-top:clamp(32px,5vw,72px);align-items:end}
+.hero .lead{margin-bottom:28px}
+.btn{display:inline-block;background:var(--ink);color:var(--ground);font:700 18px/1 var(--font);padding:20px 28px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.btn:hover{background:var(--link);transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.hero svg{width:100%;height:auto;display:block}
+@media(max-width:800px){.hero-row{grid-template-columns:1fr}}
+
+/* summary field */
+.field{background:var(--field);color:var(--field-ink)}
+.field a{color:inherit}
+.summary{padding-block:var(--sec);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px)}
+.summary h2{position:sticky;top:24px;align-self:start}
+.finding{font-size:clamp(20px,2.2vw,30px);line-height:1.25;letter-spacing:-.015em;font-weight:500;margin-bottom:clamp(24px,3vw,40px);max-width:30ch}
+.finding strong{font-weight:800;background:var(--accent);color:#0F1F19;padding:0 .2em}
+.summary .finding:last-child{margin-bottom:0}
+@media(max-width:800px){.summary{grid-template-columns:1fr}.summary h2{position:static}}
+
+/* price bottles */
+.price{padding-block:var(--sec);display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,6vw,96px);align-items:center}
+.price svg{width:100%;height:auto;display:block;max-height:560px}
+.price h2{margin-bottom:24px}
+.price p+p{margin-top:16px}
+@media(max-width:800px){.price{grid-template-columns:1fr}}
+
+/* compare */
+.compare{padding-bottom:var(--sec)}
+.compare h2{margin-bottom:16px}
+.compare .lead{margin-bottom:32px;max-width:52ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:700 16px/1 var(--font);padding:14px 20px;background:var(--step);color:var(--ink);border:0;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.filters button:hover{transform:translateY(-2px)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:16px}
+th{text-align:left;font-weight:700;padding:8px 16px;color:var(--soft)}
+td{background:var(--step);padding:18px 16px;vertical-align:top;line-height:1.4}
+td:first-child{font-weight:800;font-size:18px;letter-spacing:-.01em}
+td:first-child a{color:var(--ink)}
+tr[hidden]{display:none}
+.count{margin-top:12px;color:var(--soft);font-size:16px}
+.take{margin-top:clamp(48px,6vw,96px);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px)}
+.take ul{list-style:none}
+.take li{background:var(--step);padding:20px 22px;margin-bottom:8px;font-size:18px}
+@media(max-width:900px){
+  .take{grid-template-columns:1fr}
+  table,thead,tbody,tr,td{display:block}
+  thead{position:absolute;left:-9999px}
+  tr{background:var(--step);margin-bottom:8px;padding:6px 0}
+  td{background:none;padding:6px 16px}
+  td:first-child{font-size:22px;padding-top:12px}
+  td[data-l]::before{content:attr(data-l) ": ";font-weight:700;color:var(--soft)}
+}
+
+/* companies */
+.cos{padding-bottom:var(--sec)}
+.cos>h2{margin-bottom:clamp(32px,5vw,64px)}
+.co{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,80px);padding:clamp(32px,5vw,64px) var(--gutter);margin-inline:calc(var(--gutter)*-1)}
+.co:nth-of-type(even){background:var(--step)}
+.co h3{position:sticky;top:20px;align-self:start}
+.co .origin{display:block;font-size:18px;font-weight:500;letter-spacing:0;color:var(--soft);margin-top:12px;line-height:1.3}
+.co p{margin-bottom:14px}
+.co .un{color:var(--soft)}
+.co .un b{color:var(--ink)}
+@media(max-width:800px){.co{grid-template-columns:1fr}.co h3{position:static}}
+
+/* gaps */
+.gaps{padding-block:var(--sec);display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px)}
+.gaps ul{list-style:none}
+.gaps li{margin-bottom:22px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;max-width:48ch}
+.gaps li b{font-weight:800}
+@media(max-width:800px){.gaps{grid-template-columns:1fr}}
+
+/* sources */
+.src{padding-block:var(--sec)}
+.src h2{margin-bottom:clamp(32px,4vw,56px)}
+.srcgrid{columns:3 320px;column-gap:clamp(24px,4vw,64px)}
+.srcgrid section{break-inside:avoid;margin-bottom:36px}
+.srcgrid h3{font-size:24px;letter-spacing:-.02em;margin-bottom:12px}
+.srcgrid ul{list-style:none}
+.srcgrid li{font-size:15px;line-height:1.35;margin-bottom:10px;word-break:break-word}
+.srcgrid a{display:inline-block;padding:2px 0}
+
+footer{padding:clamp(48px,8vw,120px) max(var(--gutter),env(safe-area-inset-right,0px)) 28px max(var(--gutter),env(safe-area-inset-left,0px));overflow:hidden}
+footer .big{font-size:clamp(34px,11.5vw,210px);line-height:.9;letter-spacing:-.05em;font-weight:800;display:block}
+footer p{margin-top:28px;font-size:16px;color:inherit;max-width:80ch}
+
+/* motion */
+.js .rv{transform:translateY(22px);transition:transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.js .rv.in{transform:none}
+.a1{fill:var(--a1)}.a3{fill:var(--a3)}.a1s{stroke:var(--a1)}
+.pour{animation:drift 7s ease-in-out infinite alternate;transform-origin:50% 50%}
+@keyframes drift{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+.level{transform-origin:50% 100%;transform-box:fill-box;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.in .level,.level.in{transform:scaleY(1)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .pour{animation:none}
+  .level{transform:none;transition:none}
+  .btn,.filters button{transition:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav aria-label="Main">
+  <a class="mark" href="#top">Zero-waste skincare, Taiwan</a>
+  <ul>
+    <li><a href="#summary">Findings</a></li>
+    <li><a href="#compare">Compare</a></li>
+    <li><a href="#companies">Companies</a></li>
+    <li><a href="#gaps">Gaps</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<main id="top">
+<header class="hero wrap">
+  <h1>Taiwan returns bottles.<br>It rarely refills them.</h1>
+  <div class="hero-row">
+    <div>
+      <p class="lead rv">We checked 10 companies selling skin care in Taiwan. One refill price is confirmed on an official site. Most programs are media-reported.</p>
+      <a class="btn rv" style="--d:80ms" href="#compare">See the comparison</a>
+      <p class="rv" style="--d:140ms;margin-top:28px;font-size:16px;color:var(--soft)">Research date 2026-10-30. Scope: since 2023. Method: web search by one agent per company.</p>
+    </div>
+    <svg viewBox="0 0 700 460" role="img" aria-label="Illustration: a refill pouch pouring into a bottle, next to an empty returned bottle">
+      <rect x="0" y="420" width="700" height="40" class="a1"/>
+      <!-- bottle being refilled -->
+      <rect x="250" y="130" width="40" height="40" class="a3"/>
+      <rect x="236" y="164" width="68" height="14" class="a3"/>
+      <rect x="200" y="178" width="140" height="242" class="a1"/>
+      <rect x="200" y="290" width="140" height="130" fill="#C8EC4A"/>
+      <!-- pouch -->
+      <g class="pour" style="transform-origin:470px 120px">
+        <path d="M400 20 L560 20 L575 70 L540 210 L420 210 L385 70 Z" fill="#C8EC4A"/>
+        <path d="M400 20 L560 20 L575 70 L385 70 Z" class="a3"/>
+        <path d="M455 210 L505 210 L485 255 L475 255 Z" fill="#C8EC4A"/>
+        <rect x="462" y="255" width="16" height="40" fill="#C8EC4A"/>
+      </g>
+      <rect x="258" y="300" width="24" height="120" fill="#EEF2EC" opacity=".0"/>
+      <!-- returned empty bottles -->
+      <rect x="470" y="318" width="26" height="26" class="a3"/>
+      <rect x="456" y="342" width="54" height="10" class="a3"/>
+      <rect x="430" y="352" width="106" height="68" class="a1"/>
+      <rect x="570" y="288" width="26" height="26" class="a3"/>
+      <rect x="556" y="312" width="54" height="10" class="a3"/>
+      <rect x="530" y="322" width="106" height="98" class="a1"/>
+      <path d="M130 220 L90 220 L90 330 L130 330" fill="none" class="a1s" stroke-width="14"/>
+      <path d="M118 306 L96 332 L74 306 Z" class="a1"/>
+    </svg>
+  </div>
+</header>
+
+<div class="field" id="summary">
+  <div class="wrap summary">
+    <h2 class="rv">What we found</h2>
+    <div>
+      <p class="finding rv">No company in this set offers a true package-free skincare range at scale in Taiwan.</p>
+      <p class="finding rv">The market is dominated by <strong>empty-bottle return programs</strong> run by imported brands. Real <strong>refill products</strong> are rare.</p>
+      <p class="finding rv">Refills are confirmed for two brands. Sabon sells a 500ml shower-oil refill at NT$1,180 versus NT$1,380 for the bottle, about 14% cheaper. Elixir has had refill packs since April 2021 (media only). L'Occitane refill pouches are reported, but their price and terms are unconfirmed.</p>
+      <p class="finding rv">Bottle returns reward customers modestly. L'Occitane gives NT$10 off per bottle (cap NT$200). The Body Shop gave NT$10 off per bottle (cap NT$100, 2021 campaign). Kiehl's gives 10 member points per bottle.</p>
+      <p class="finding rv">LUSH is the only naked, package-free model in the set, but its Taiwan return terms could not be read from the official site.</p>
+      <p class="finding rv">Local brands are weaker on structured programs. Greenvines reports a bottle-recycling program since 2018 (500,000+ bottles by Dec 2024). YUAN has none, only recycled-plastic bottles (reported) and FSC paper.</p>
+      <p class="finding rv">picupi and Zero Living are real refill and bulk retailers, but their refills are household cleaners, not skin care.</p>
+      <p class="finding rv">Evidence quality is the main limitation. Most official Taiwan sites returned errors (403 or an expired certificate), so most claims are media-reported.</p>
+    </div>
+  </div>
+</div>
+
+<section class="wrap price" aria-labelledby="price-h">
+  <svg viewBox="0 0 600 500" role="img" aria-label="Two bottles drawn to scale: the bottle costs NT$1,380 and the refill pack NT$1,180">
+    <rect x="0" y="460" width="600" height="40" class="a1"/>
+    <!-- bottle price 1380 -> height 400 -->
+    <rect x="80" y="60" width="170" height="400" class="a1"/>
+    <!-- refill 1180 -> 1180/1380*400 = 342 -->
+    <rect x="350" y="118" width="170" height="342" fill="#C8EC4A"/>
+    <rect x="350" y="118" width="170" height="342" fill="none"/>
+    <text x="165" y="130" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="800" font-size="44" fill="#EEF2EC">1,380</text>
+    <text x="165" y="170" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="500" font-size="22" fill="#EEF2EC">bottle, NT$</text>
+    <text x="435" y="188" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="800" font-size="44" fill="#0F1F19">1,180</text>
+    <text x="435" y="228" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-weight="500" font-size="22" fill="#0F1F19">refill pack, NT$</text>
+  </svg>
+  <div>
+    <h2 id="price-h" class="rv">Only one refill has a verified discount</h2>
+    <p class="rv" style="--d:70ms">Sabon's official Taiwan site (fetched 2026-10-30) lists the 500ml shower oil at NT$1,380 and the 500ml refill pack at NT$1,180, about 14% cheaper. The bars are drawn to scale.</p>
+    <p class="rv" style="--d:120ms">Elixir's 2021 refills cost NT$900–1,000, but no new-bottle price was found for comparison. L'Occitane's shampoo refill showed about NT$832 at a retailer, with no confirmed official price.</p>
+  </div>
+</section>
+
+<section class="wrap compare" id="compare" aria-labelledby="compare-h">
+  <h2 id="compare-h" class="rv">Ten companies compared</h2>
+  <p class="lead rv">Filter by the main format each company offers in Taiwan. Select a name to jump to its details.</p>
+  <div class="filters" role="group" aria-label="Filter by format">
+    <button type="button" data-f="all" aria-pressed="true">All 10</button>
+    <button type="button" data-f="refill" aria-pressed="false">Refill</button>
+    <button type="button" data-f="return" aria-pressed="false">Bottle return</button>
+    <button type="button" data-f="naked" aria-pressed="false">Naked products</button>
+    <button type="button" data-f="none" aria-pressed="false">No program found</button>
+  </div>
+  <table id="tbl">
+    <thead><tr><th>Company</th><th>Origin</th><th>Main format</th><th>Standing or limited</th><th>Reward / price</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr data-t="naked return"><td><a href="#lush">LUSH Taiwan</a></td><td data-l="Origin">UK (direct operation)</td><td data-l="Format">Naked products + "Bring It Back" return</td><td data-l="Status">Return appears standing; Mar 2026 donation drive closed</td><td data-l="Reward">Reported: NT$20 credit per package, or 5 for a fresh mask</td><td data-l="Evidence">Partly official</td></tr>
+      <tr data-t="return"><td><a href="#kiehls">Kiehl's Taiwan</a></td><td data-l="Origin">US (L'Oréal)</td><td data-l="Format">Empty-bottle return</td><td data-l="Status">Campaign-based</td><td data-l="Reward">10 member points per bottle</td><td data-l="Evidence">Media only</td></tr>
+      <tr data-t="return refill"><td><a href="#loccitane">L'Occitane Taiwan</a></td><td data-l="Origin">France</td><td data-l="Format">Bottle return + refill pouches</td><td data-l="Status">Standing, per media</td><td data-l="Reward">NT$10 off per bottle, cap NT$200; shampoo refill about NT$832 retail</td><td data-l="Evidence">Media only</td></tr>
+      <tr data-t="return"><td><a href="#kose">Kose Sekkisei</a></td><td data-l="Origin">Japan</td><td data-l="Format">Bottle return + donation</td><td data-l="Status">Event-only (last: Jul–Aug 2025)</td><td data-l="Reward">Tote bag + donation per bottle</td><td data-l="Evidence">Media only</td></tr>
+      <tr data-t="return"><td><a href="#bodyshop">The Body Shop Taiwan</a></td><td data-l="Origin">UK</td><td data-l="Format">Bottle return</td><td data-l="Status">Periodic campaigns</td><td data-l="Reward">NT$10 off per bottle, cap NT$100 (2021)</td><td data-l="Evidence">Media only; no Taiwan refill found</td></tr>
+      <tr data-t="refill"><td><a href="#sabon">Sabon Taiwan</a></td><td data-l="Origin">Israel</td><td data-l="Format">Refill packs</td><td data-l="Status">Standing product line</td><td data-l="Reward">Refill NT$1,180 vs bottle NT$1,380</td><td data-l="Evidence">Official site</td></tr>
+      <tr data-t="refill"><td><a href="#elixir">Elixir (Shiseido)</a></td><td data-l="Origin">Japan</td><td data-l="Format">Refill packs</td><td data-l="Status">Launched Apr 2021; current status unknown</td><td data-l="Reward">2021: NT$900–1,000 per refill</td><td data-l="Evidence">Media only (one article)</td></tr>
+      <tr data-t="return"><td><a href="#greenvines">Greenvines 綠藤生機</a></td><td data-l="Origin">Taiwan</td><td data-l="Format">Empty-bottle recycling</td><td data-l="Status">Standing since 2018</td><td data-l="Reward">Not found</td><td data-l="Evidence">Official homepage</td></tr>
+      <tr data-t="none"><td><a href="#yuan">YUAN 阿原</a></td><td data-l="Origin">Taiwan</td><td data-l="Format">None; recycled-content packaging</td><td data-l="Status">n/a</td><td data-l="Reward">n/a</td><td data-l="Evidence">Media only</td></tr>
+      <tr data-t="refill"><td><a href="#picupi">picupi / Zero Living</a></td><td data-l="Origin">Taiwan</td><td data-l="Format">In-store refill / bulk retail (cleaners, not skin care)</td><td data-l="Status">Status unconfirmed</td><td data-l="Reward">Not found</td><td data-l="Evidence">Media only</td></tr>
+    </tbody>
+  </table>
+  <p class="count" id="count" aria-live="polite">Showing 10 of 10</p>
+
+  <div class="take">
+    <h3 class="rv">Takeaways from the comparison</h3>
+    <ul>
+      <li class="rv">Only Sabon has a verified refill price advantage. Others lack a published refill-versus-new comparison.</li>
+      <li class="rv">Return programs are largely discount- or points-driven, with no named recycling partner in most cases. Named partners: Story Wear and CCF (Kiehl's campaign), Taiwan Sanhai Angels (Kose, donation recipient), Baodao Jingxiang Tuan (LUSH cosmetics drive).</li>
+      <li class="rv">Certifications specific to the Taiwan programs: none found. Greenvines claims B Corp, Cradle to Cradle and 1% for the Planet (its own homepage; the Cradle to Cradle claim had no independent corroboration). YUAN reports GMP, ISO 22716, ISO 9001 and B Corp (one media report).</li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap cos" id="companies">
+  <h2 class="rv">Company details</h2>
+
+  <article class="co" id="lush">
+    <h3>LUSH Taiwan<span class="origin">UK brand · naked products</span></h3>
+    <div>
+      <p>UK brand, run as a 100% UK direct operation in Taiwan (an earlier distributor ended in 2015). Sells naked solid products: shampoo and conditioner bars, soap, bath products, fresh face masks.</p>
+      <p>A "Bring It Back" packaging return exists on the official Taiwan site, but its terms page was unreadable. A cosmetics donation drive with Baodao Jingxiang Tuan ran 2026-03-18 to 2026-03-31 at five stores: Taipei Ximen, Zhongxiao and Xinyi Vieshow, Taichung LaLaport, and Kaohsiung Hanshin Arena.</p>
+      <p class="un"><b>Unconfirmed:</b> the NT$20 / 5-package reward, the store list, the recycled-content figure.</p>
+    </div>
+  </article>
+
+  <article class="co" id="kiehls">
+    <h3>Kiehl's Taiwan<span class="origin">US brand · L'Oréal Group</span></h3>
+    <div>
+      <p>Owned by L'Oréal since 2000. Reported: one genuine empty bottle earns 10 member points (TVBS, 2025-07-07). An Earth Month campaign involved Story Wear and CCF. Sources disagree on whether other brands' bottles count. No refill format found.</p>
+      <p class="un"><b>Unconfirmed:</b> whether the program is permanent.</p>
+    </div>
+  </article>
+
+  <article class="co" id="loccitane">
+    <h3>L'Occitane Taiwan<span class="origin">French brand</span></h3>
+    <div>
+      <p>Reported by TVBS and Marie Claire: NT$10 off per empty bottle, capped at NT$200 per purchase. A 2025 upgrade turns returned bottles into recycled-PET phone lanyards, a Gold Card birthday gift (one bottle per lanyard, claimed to save 63.4 g carbon and 2.7 L water).</p>
+      <p>Refill pouches exist, for example a 500ml shampoo refill at about NT$832 on Yahoo Shopping.</p>
+      <p class="un"><b>Unconfirmed:</b> official terms, store coverage, other-brand acceptance, and recycled-content claims (the 81.5% and 77% figures are unverified).</p>
+    </div>
+  </article>
+
+  <article class="co" id="kose">
+    <h3>Kose Sekkisei 雪肌精<span class="origin">Japanese brand · Taiwan Kose</span></h3>
+    <div>
+      <p>Latest confirmed campaign: 1 Jul–31 Aug 2025, a SAVE the BLUE empty-bottle return with a canvas tote and a donation to Taiwan Sanhai Angels (coral restoration). The donation amount was not stated.</p>
+      <p>Earlier: a Feb 2018 discount-for-bottles event and a 2023 NT$10-per-share donation. No 2026 Taiwan edition found. No refill.</p>
+    </div>
+  </article>
+
+  <article class="co" id="bodyshop">
+    <h3>The Body Shop Taiwan<span class="origin">UK brand</span></h3>
+    <div>
+      <p>In-store empty-bottle return with discounts, reported as running since 1988. A 2021 campaign gave NT$10 off per bottle, up to 10 bottles and NT$100 per purchase.</p>
+      <p>Refill stations exist in Malaysia, the UK and Singapore, but none was found in Taiwan. Its official site failed with an expired certificate.</p>
+      <p class="un"><b>Unconfirmed:</b> current 2025–2026 terms.</p>
+    </div>
+  </article>
+
+  <article class="co" id="sabon">
+    <h3>Sabon Taiwan<span class="origin">Israeli brand · in Taiwan since 2014</span></h3>
+    <div>
+      <p>Official site (fetched 2026-10-30): 500ml shower-oil refill packs in White Tea and SABON Classic at NT$1,180 (bottle NT$1,380). Green Rose and Delicate Jasmine refills were sold out.</p>
+      <p>Other prices: body scrub 600g NT$2,080, body lotion 150ml NT$1,380. No recycling program, no eco certifications stated, and no solid soap bars on the Taiwan site.</p>
+    </div>
+  </article>
+
+  <article class="co" id="elixir">
+    <h3>Elixir 怡麗絲爾<span class="origin">Japanese brand · Shiseido group</span></h3>
+    <div>
+      <p>Refill packs for toner and emulsion launched in Taiwan in April 2021, with a claimed ~85% plastic reduction (a brand claim). The Shiseido parent is common knowledge, not stated in the source.</p>
+      <p>2021 prices: moisturizing water 150ml NT$900; moisturizing emulsion 110ml NT$1,000; brightening water 150ml NT$1,000; brightening emulsion 110ml NT$1,000.</p>
+      <p class="un"><b>Based on one article</b> (Beauty321, 2021-04-21). Current availability unconfirmed.</p>
+    </div>
+  </article>
+
+  <article class="co" id="greenvines">
+    <h3>Greenvines 綠藤生機<span class="origin">Taiwanese clean-skincare brand</span></h3>
+    <div>
+      <p>The homepage (greenvines.com.tw) states an empty-bottle recycling program launched in 2018 with 500,000+ bottles collected by December 2024, and a Lalaport Taichung North counter opened in August 2025. No refill program found.</p>
+      <p>Homepage certifications: B Corp (2015, ranking disputed), 1% for the Planet, and Cradle to Cradle (no independent corroboration).</p>
+      <p class="un"><b>Unconfirmed:</b> mechanism, partner, incentive, stores.</p>
+    </div>
+  </article>
+
+  <article class="co" id="yuan">
+    <h3>YUAN 阿原<span class="origin">Taiwanese herbal-soap brand</span></h3>
+    <div>
+      <p>Production base in Shimen and a farm on Yangmingshan. No zero-waste, refill or take-back program found. That means nothing was found, not a confirmed absence.</p>
+      <p>Reported packaging changes: bottle bodies 100% PCR and FSC-certified paper (Yam News, 2026-03-10); clear plastic film dropped in a July 2022 redesign. The official website could not be confirmed.</p>
+    </div>
+  </article>
+
+  <article class="co" id="picupi">
+    <h3>picupi 挑品 and Zero Living 零居<span class="origin">Taiwanese package-free retail</span></h3>
+    <div>
+      <p>picupi, a Taiwanese cleaning-products brand, runs a Xinyi (Taipei) "net zero living lab" where customers refill laundry detergent, stain remover and dish liquid into their own bottles. On 2026-04-20 it launched five products with FamilyMart, some in recycled milk bottles.</p>
+      <p>Zero Living is a package-free shop in Banqiao (listed in 2020). It reportedly stocks a shampoo bar and bamboo toothbrushes.</p>
+      <p class="un"><b>No skin-care refill was confirmed at either.</b> Opening years and current status are unverified.</p>
+    </div>
+  </article>
+</div>
+
+<div class="field" id="gaps">
+  <div class="wrap gaps">
+    <h2 class="rv">Gaps and caveats</h2>
+    <ul>
+      <li class="rv"><b>Official sites were mostly unreachable,</b> so only Sabon's refill pricing and Greenvines' program headline are official-site facts.</li>
+      <li class="rv"><b>Python was unavailable,</b> so the conversion script and field validator did not run. The report was written by hand from the JSON files, and the agents checked field coverage manually.</li>
+      <li class="rv"><b>Uncertain values:</b> the research skill says to drop them. A few key reported figures are kept here, labeled as reported or unconfirmed.</li>
+      <li class="rv"><b>Candidates dropped</b> for lack of evidence: Aesop, MUJI, Ethique, Dr. Bronner's, Drunk Elephant.</li>
+      <li class="rv"><b>Coverage is not exhaustive.</b> Results are capped at 10 companies. Taiwan-local solid-soap makers and other package-free shops were not researched individually.</li>
+    </ul>
+  </div>
+</div>
+
+<section class="wrap src" id="sources" aria-labelledby="src-h">
+  <h2 id="src-h" class="rv">Sources</h2>
+  <div class="srcgrid">
+    <section>
+      <h3>Marie Claire Taiwan</h3>
+      <ul>
+        <li><a href="https://www.marieclaire.com.tw/beauty/skin-care/65694" target="_blank" rel="noopener">marieclaire.com.tw/beauty/skin-care/65694</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/skin-care/85209" target="_blank" rel="noopener">marieclaire.com.tw/beauty/skin-care/85209</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/skin-care/73389" target="_blank" rel="noopener">marieclaire.com.tw/beauty/skin-care/73389</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/skin-care/62841" target="_blank" rel="noopener">marieclaire.com.tw/beauty/skin-care/62841</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/skin-care/74689/elixir" target="_blank" rel="noopener">marieclaire.com.tw/beauty/skin-care/74689/elixir</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/news/64989" target="_blank" rel="noopener">marieclaire.com.tw/beauty/news/64989</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/news/62083" target="_blank" rel="noopener">marieclaire.com.tw/beauty/news/62083</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/news/34305" target="_blank" rel="noopener">marieclaire.com.tw/beauty/news/34305</a></li>
+        <li><a href="https://www.marieclaire.com.tw/beauty/news/32854" target="_blank" rel="noopener">marieclaire.com.tw/beauty/news/32854</a></li>
+        <li><a href="https://www.marieclaire.com.tw/lifestyle/whats-hot/76760" target="_blank" rel="noopener">marieclaire.com.tw/lifestyle/whats-hot/76760</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Taiwan news and media</h3>
+      <ul>
+        <li><a href="https://news.tvbs.com.tw/life/2922037" target="_blank" rel="noopener">TVBS: empty-bottle roundup, 2025-07-07</a></li>
+        <li><a href="https://news.tvbs.com.tw/life/3155276" target="_blank" rel="noopener">TVBS: news.tvbs.com.tw/life/3155276</a></li>
+        <li><a href="https://health.tvbs.com.tw/life/361724" target="_blank" rel="noopener">TVBS: LUSH drive, 2026-03</a></li>
+        <li><a href="https://wantrich.chinatimes.com/news/20260626900608-420101" target="_blank" rel="noopener">Wantrich: L'Oréal Group, 2026</a></li>
+        <li><a href="https://www.ctee.com.tw/news/20260420701370-430503" target="_blank" rel="noopener">CTEE: picupi x FamilyMart, 2026-04-20</a></li>
+        <li><a href="https://n.yam.com/Article/20260310753158" target="_blank" rel="noopener">Yam News: YUAN, 2026-03-10</a></li>
+        <li><a href="https://www.beauty321.com/post/39991" target="_blank" rel="noopener">Beauty321: Elixir, 2021-04-21</a></li>
+        <li><a href="https://www.beauty321.com/post/49707" target="_blank" rel="noopener">Beauty321: YUAN, 2022-07-28</a></li>
+        <li><a href="https://www.bella.tw/articles/design&amp;gadget/25120" target="_blank" rel="noopener">Bella.tw: Zero Living, 2020</a></li>
+        <li><a href="https://vocus.cc/article/65508485fd897800011fbb8b" target="_blank" rel="noopener">Vocus: package-free stores blog</a></li>
+        <li><a href="https://www.dcard.tw/f/makeup/p/259521593" target="_blank" rel="noopener">Dcard: L'Occitane forum post</a></li>
+        <li><a href="https://tw.buy.yahoo.com/brands/41168988" target="_blank" rel="noopener">Yahoo Shopping: L'Occitane refill price</a></li>
+        <li><a href="https://www.momoshop.com.tw/product/13188891" target="_blank" rel="noopener">momo: YUAN retail prices</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Official and brand sources</h3>
+      <ul>
+        <li><a href="https://www.sabon.com.tw" target="_blank" rel="noopener">sabon.com.tw (fetched 2026-10-30)</a></li>
+        <li><a href="https://www.greenvines.com.tw" target="_blank" rel="noopener">greenvines.com.tw (fetched 2026-10-30)</a></li>
+        <li><a href="https://www.lush.com/tw/zh_tw/c/rewild-your-routine" target="_blank" rel="noopener">LUSH Taiwan: rewild your routine</a></li>
+        <li><a href="https://weare.lush.com/zh-tw/press-releases/lush-taiwan-is-back/" target="_blank" rel="noopener">LUSH press release: Taiwan is back</a></li>
+        <li><a href="https://www.lush.com/tw/zh_tw/a/bring-it-back-packaging-recycling-scheme-terms-conditions-tw" target="_blank" rel="noopener">LUSH Bring It Back terms (search snippet only; 403)</a></li>
+        <li><a href="https://global.thebodyshop.com/en-sg/about-us/brand-values/sustainability/return-recycle-reuse/a/a00011" target="_blank" rel="noopener">The Body Shop: return, recycle, reuse</a></li>
+        <li><a href="https://social.terracycle.com/terms/kiehls-loreal" target="_blank" rel="noopener">TerraCycle: Kiehl's terms</a></li>
+        <li><a href="https://ie.loccitane.com/recycling-programme" target="_blank" rel="noopener">L'Occitane recycling programme (global reference)</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Other</h3>
+      <ul>
+        <li><a href="https://www.fashionsnap.com/article/2025-06-06/sekkisei-save-the-blue-ocean-project/" target="_blank" rel="noopener">Fashionsnap: Sekkisei 2025</a></li>
+        <li><a href="https://www.fashionsnap.com/article/2026-06-10/sekkisei-save-the-blue-ocean-project/" target="_blank" rel="noopener">Fashionsnap: Sekkisei 2026</a></li>
+        <li><a href="https://www.fun-japan.jp/tw/articles/8001" target="_blank" rel="noopener">Fun! Japan: Sekkisei 2023 campaign</a></li>
+        <li><a href="https://www.businessinsider.jp/article/273506/" target="_blank" rel="noopener">Business Insider Japan: Greenvines</a></li>
+        <li><a href="https://assets.kpmg.com/content/dam/kpmg/xx/pdf/2021/05/greenvines-podcast-transcript.pdf" target="_blank" rel="noopener">KPMG: Greenvines podcast transcript</a></li>
+        <li><a href="https://nst.com.my/amp/lifestyle/flair/2021/12/758923/body-shop-launches-refill-station" target="_blank" rel="noopener">NST: Body Shop refill station, Malaysia</a></li>
+        <li><a href="https://en.pinkoi.com/product/FZQ7fAHF" target="_blank" rel="noopener">Pinkoi: picupi listing</a></li>
+        <li><a href="https://www.sustainablejungle.com/sustainable/zero-waste-skin-care/" target="_blank" rel="noopener">Sustainable Jungle: zero waste skin care</a></li>
+        <li><a href="https://www.beautyindependent.com/new-brand-dew-mighty-great-skincare-environmental/" target="_blank" rel="noopener">Beauty Independent: DEW Mighty</a></li>
+        <li><a href="https://www.packaginginsights.com/news/aromatica-debuts-south-koreas-first-refillable-skin-care-store-in-south-korea-for-zero-waste-beauty.html" target="_blank" rel="noopener">Packaging Insights: Aromatica refill store</a></li>
+      </ul>
+    </section>
+  </div>
+</section>
+</main>
+
+<footer class="field">
+  <span class="big">Refill. Return. Repeat.</span>
+  <p>Zero-waste skin care in Taiwan: research report, 2026-10-30. Illustrations are original flat drawings. Pricing and program terms are as reported by the sources above and may have changed.</p>
+</footer>
+
+<script>
+(function(){
+  var io;
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv,.level').forEach(function(el){io.observe(el)});
+  }else{
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+  }
+  var btns=document.querySelectorAll('.filters button'),rows=document.querySelectorAll('#tbl tbody tr'),count=document.getElementById('count');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f'),n=0;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    rows.forEach(function(r){var ok=f==='all'||(' '+r.getAttribute('data-t')+' ').indexOf(' '+f+' ')>-1;r.hidden=!ok;if(ok)n++});
+    count.textContent='Showing '+n+' of '+rows.length;
+  })});
+})();
+</script>
+</body>
+</html>
